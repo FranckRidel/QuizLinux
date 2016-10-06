@@ -1,0 +1,15 @@
+function choixLevel {
+		#chaque niveau générera des propositions différentes à chaque question
+		clear
+		echo "Choisissez le niveau de difficulté :"
+		select i in Facile Difficile Expert; do
+			if [ x$i = xFacile ]; then
+				level="Facile"				#niveau de difficulté du jeu
+			elif [ x$i = xDifficile ]; then
+				level="Difficile"
+			elif [ x$i = xExpert ]; then
+				level="Expert"
+			fi
+			quiz #appelle la fonction qui génère le questionnaire
+		done
+	}
